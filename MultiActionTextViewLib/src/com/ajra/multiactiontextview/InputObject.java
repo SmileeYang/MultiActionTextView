@@ -43,6 +43,23 @@ public class InputObject {
 	 * uniquely identify on which part of text view click.
 	 */
 	private int OperationType;
+	
+	/**
+	 * Add @20150416 by Smilee Yang
+	 * 
+	 * @param isUnderLineRequired
+	 * : Is under line required with hyper link string.
+	 * 
+	 * @param defaultHyperLinkColor
+	 * : Give the color code for hyper link string default color.
+	 * 
+	 * @param pressedHyperLinkColor
+	 * : Give the color code for hyper link string pressed color.
+	 * 
+	 */
+	private boolean isUnderLineRequired;
+	private int defaultHyperLinkColor;
+	private int pressedHyperLinkColor;
 
 	public Object getInputObject() {
 		return inputObject;
@@ -91,6 +108,36 @@ public class InputObject {
 	public void setMultiActionTextviewClickListener(
 			MultiActionTextviewClickListener multiActionTextviewClickListener) {
 		this.multiActionTextviewClickListener = multiActionTextviewClickListener;
+	}
+	
+	/**
+	 * 
+	 * Add @20150416 by Smilee Yang
+	 * 
+	 */
+	
+	public void setIsUnderLineRequired(boolean isUnderLineRequired) {
+		this.isUnderLineRequired = isUnderLineRequired;
+	}
+	
+	public boolean getIsUnderLineRequired() {
+		return isUnderLineRequired;
+	}
+	
+	public int getDefaultHyperLinkColor() {
+		return defaultHyperLinkColor;
+	}
+
+	public void setDefaultHyperLinkColor(int defaultHyperLinkColor) {
+		this.defaultHyperLinkColor = defaultHyperLinkColor;
+	}
+	
+	public int getPressedHyperLinkColor() {
+		return pressedHyperLinkColor;
+	}
+
+	public void setPressedHyperLinkColor(int pressedHyperLinkColor) {
+		this.pressedHyperLinkColor = pressedHyperLinkColor;
 	}
 
 }

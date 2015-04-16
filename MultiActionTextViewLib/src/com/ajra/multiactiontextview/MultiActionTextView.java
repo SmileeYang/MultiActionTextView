@@ -30,43 +30,36 @@ import android.widget.TextView.BufferType;
  *       want click action.
  * 
  */
+
 public class MultiActionTextView {
-
+	
+	/**
+	 * 
+	 * Modified @20150416 by Smilee Yang
+	 * 
+	 * @param bgColorCode
+	 * : bgColorCode is the color of hyper link string high light color when user pressed.
+	 * 
+	 */
+	
 	public static void setSpannableText(TextView textView,
-			SpannableStringBuilder stringBuilder, int highLightTextColor) {
-		textView.setMovementMethod(LinkMovementMethod.getInstance());
+			SpannableStringBuilder stringBuilder, int bgColorCode) {
+		textView.setMovementMethod(new LinkTouchMovementMethod());
 		textView.setText(stringBuilder, BufferType.SPANNABLE);
-		textView.setLinkTextColor(highLightTextColor);
+		textView.setHighlightColor(bgColorCode);
 	}
 
 	/**
 	 * 
-	 * @param inputObject
-	 *            :should not null Method responsible for creating click able
-	 *            part in TextView without hyper link.
-	 */
-	public static void addActionOnTextViewWithLink(final InputObject inputObject) {
-		inputObject.getStringBuilder().setSpan(
-				new MultiActionTextViewClickableSpan(true) {
-					@Override
-					public void onClick(View widget) {
-						inputObject.getMultiActionTextviewClickListener()
-								.onTextClick(inputObject);
-					}
-				}, inputObject.getStartSpan(), inputObject.getEndSpan(),
-				Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-	}
-
-	/**
+	 * Modified @20150416 by Smilee Yang
 	 * 
 	 * @param inputObject
-	 *            :should not null Method responsible for creating click able
-	 *            part in TextView with hyper link.
+	 * : Includes the configuration of TextView with hyper link string like text default/pressed color, underline.
+	 * 
 	 */
-	public static void addActionOnTextViewWithoutLink(
-			final InputObject inputObject) {
+	public static void addActionOnTextView(final InputObject inputObject) {
 		inputObject.getStringBuilder().setSpan(
-				new MultiActionTextViewClickableSpan(false) {
+				new MultiActionTextViewClickableSpan(inputObject) {
 					@Override
 					public void onClick(View widget) {
 						inputObject.getMultiActionTextviewClickListener()

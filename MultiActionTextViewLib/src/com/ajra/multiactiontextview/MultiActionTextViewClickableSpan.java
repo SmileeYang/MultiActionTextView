@@ -19,24 +19,51 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 
 /**
- * 
+ * Original ---
  * @author Ajay Sahani:
  * @seeA :Class responsible for hiding and showing and Setting Link to
  *       substring.
  * 
  */
+
 public abstract class MultiActionTextViewClickableSpan extends ClickableSpan {
+	
+	/**
+	 * 
+	 * Modified @20150416 by Smilee Yang
+	 * 
+	 * @param mIsPressed
+	 * : Detected hyper link has pressed or not by using LinkTouchMovementMethod class method.
+	 * 
+	 * @param isUnderLineRequired
+	 * : Config hyper link with/without under line.
+	 * 
+	 * @param defaultHyperLinkColor
+	 * : Config hyper link default color.
+	 * 
+	 * @param pressedHyperLinkColor
+	 * : Config hyper link pressed color.
+	 * 
+	 */
 
+	private boolean mIsPressed;
 	private boolean isUnderLineRequired;
+	private int defaultHyperLinkColor, pressedHyperLinkColor;
 
-	public MultiActionTextViewClickableSpan(boolean isUnderLineRequired) {
-		this.isUnderLineRequired = isUnderLineRequired;
+	public MultiActionTextViewClickableSpan(InputObject inputObject) {
+		this.isUnderLineRequired = inputObject.getIsUnderLineRequired();
+		this.defaultHyperLinkColor = inputObject.getDefaultHyperLinkColor();
+		this.pressedHyperLinkColor = inputObject.getPressedHyperLinkColor();
+	}
+
+	public void setPressed(boolean isSelected) {
+		mIsPressed = isSelected;
 	}
 
 	@Override
 	public void updateDrawState(TextPaint ds) {
-		ds.setColor(ds.linkColor);
+		ds.setColor(mIsPressed ? pressedHyperLinkColor : defaultHyperLinkColor);
 		ds.setUnderlineText(isUnderLineRequired);
+		ds.clearShadowLayer();
 	}
-
 }

@@ -1,12 +1,16 @@
 MultiActionTextView
 ===================
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MultiActionTextView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1099)
+* 
+Update note
+=======
+   It is use to create spannable textview with/without under line and hyper link text color that press or not.
+   You can provide custom color (default color and pressed color) with text on which you want to click functional.
 
-It is use to create spannable textview with and without under line.
-You can provide custom color to text on which you want click functionality.
-
-<a href="http://imgur.com/w94WoSX"><img src="http://i.imgur.com/w94WoSX.png" width='275' height='428' /></a>
-<a href="http://imgur.com/7d4n91z"><img src="http://i.imgur.com/7d4n91z.png" width='275' height='428' /></a>
+<a href="http://imgur.com/kQjGO6v"><img src="http://i.imgur.com/kQjGO6v.png" width='275' height='428' /></a>
+<a href="http://imgur.com/zTaQTqI"><img src="http://i.imgur.com/zTaQTqI.png" width='275' height='428' /></a>
+<a href="http://imgur.com/3CZVDwW"><img src="http://i.imgur.com/3CZVDwW.png" width='275' height='428' /></a>
+<a href="http://imgur.com/26DnDRR"><img src="http://i.imgur.com/26DnDRR.png" width='275' height='428' /></a>
 
 Compatibility
 =========
@@ -28,3 +32,5 @@ License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+
