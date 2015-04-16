@@ -2,8 +2,7 @@ MultiActionTextView
 ===================
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MultiActionTextView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1099)
 * 
-Update note
-=======
+Update note:
    It is use to create spannable textview with/without under line and hyper link text color that press or not.
    You can provide custom color (default color and pressed color) with text on which you want to click functional.
 
